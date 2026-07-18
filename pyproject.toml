@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "skill-learning-planner"
+version = "1.0.0"
+description = "Turn a skill goal into a weekly learning roadmap."
+requires-python = ">=3.11"
+
+[project.scripts]
+skill-planner = "skill_planner:main"
+
+[tool.setuptools]
+py-modules = ["skill_planner"]

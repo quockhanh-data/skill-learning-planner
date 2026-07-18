@@ -1,31 +1,68 @@
 # Skill Learning Planner
 
-A command-line planner that turns a skill goal into a weekly learning roadmap with practice tasks, checkpoints, and portfolio evidence.
+A Python CLI that turns a skill goal into a weekly learning roadmap. It infers the learning domain, balances theory/practice/review, and creates checkpoints plus portfolio evidence for each week.
 
-## Why I Built This
+## Highlights
 
-Learning a new skill is easier when the path is visible. This tool creates a simple structure for study, practice, review, and proof of progress.
+- Supports data, coding, writing, language, design, and general skill plans.
+- Infers the domain from the skill name or accepts a manual `--domain`.
+- Generates weekly roadmap sections with learn, practice, review, evidence, and checkpoint tasks.
+- Supports light, balanced, and deep intensity modes.
+- Exports Markdown or JSON.
+- Uses only the Python standard library.
 
-## Features
-
-- Generates a week-by-week learning plan.
-- Balances theory, practice, review, and output.
-- Creates measurable checkpoints.
-- Suggests portfolio evidence for each stage.
-- Works for technical and non-technical skills.
-
-## Usage
+## Quick Start
 
 ```bash
-python skill_planner.py "data visualization" --weeks 6 --hours 5
+python skill_planner.py "data visualization" --weeks 4 --hours 5
 ```
 
-Save a plan:
+Custom goal:
 
 ```bash
-python skill_planner.py "SQL for analytics" --weeks 4 --hours 6 --output learning_plan.md
+python skill_planner.py "SQL for analytics" --weeks 6 --hours 6 --goal "Build confidence writing SQL reports"
+```
+
+Deep coding plan:
+
+```bash
+python skill_planner.py "Flutter app development" --domain coding --intensity deep --weeks 5
+```
+
+Write Markdown:
+
+```bash
+python skill_planner.py "Power BI dashboards" --output learning_plan.md
+```
+
+Write JSON:
+
+```bash
+python skill_planner.py "English speaking" --json --output learning_plan.json
+```
+
+## Install As A CLI
+
+```bash
+python -m pip install -e .
+skill-planner "data visualization" --weeks 4
+```
+
+## Output Sections
+
+- Goal
+- Plan Settings
+- Weekly Rhythm
+- Milestones
+- Roadmap
+- Reflection Template
+
+## Tests
+
+```bash
+python -m unittest discover -s tests -v
 ```
 
 ## Portfolio Note
 
-This project supports self-study and helps show a structured approach to learning new skills.
+I built this tool to make self-study more measurable: choose a skill, plan the weeks, practice consistently, and keep evidence of progress.
